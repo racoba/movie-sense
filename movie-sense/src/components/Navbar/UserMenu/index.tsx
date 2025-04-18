@@ -1,9 +1,11 @@
 "use client"
 import { Logout, History } from "@mui/icons-material"
 import { Avatar, Box, Divider, IconButton, ListItemIcon, Menu, MenuItem, Tooltip, Typography } from "@mui/material"
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export const UserMenu = () => {
+    const router = useRouter();
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -12,6 +14,9 @@ export const UserMenu = () => {
     const handleClose = () => {
         setAnchorEl(null);
     };
+    const handleLogout = () => {
+        router.push("/login")
+    }
     return (
         <div className="flex flex-row">
             <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
@@ -73,7 +78,7 @@ export const UserMenu = () => {
                     <History /><span className="ml-3"> Watched Movies</span>
                 </MenuItem>
                 <Divider />
-                <MenuItem onClick={handleClose}>
+                <MenuItem onClick={handleLogout}>
                     <ListItemIcon>
                         <Logout fontSize="small" />
                     </ListItemIcon>
