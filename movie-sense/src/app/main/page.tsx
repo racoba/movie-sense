@@ -1,4 +1,4 @@
-import { MovieBanner, MovieCard, Recommendations, ThemeMenu } from "@/components";
+import { MovieBanner, Recommendations, ThemeMenu } from "@/components";
 
 const Main = () => {
     const themes = ["Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação"]

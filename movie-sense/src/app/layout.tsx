@@ -13,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="min-h-[100vh]">
+      <body className="min-h-[100vh] gap-10 flex flex-col p-6">
         {children}
       </body>
     </html>

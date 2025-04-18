@@ -28,11 +28,8 @@ const Register = () => {
     };
 
     return (
-        <>
-            <Box
-                display="flex"
-                justifyContent="center"
-            >
+        <div className="h-[100vh]">
+            <div className="flex flex-col h-full items-center justify-center">
                 <Grid
                     container
                     height={500}
@@ -99,14 +96,14 @@ const Register = () => {
                         </FormControl>
                     </form>
                 </Grid>
-            </Box>
+            </div>
             <Snackbar
                 open={open}
                 autoHideDuration={5000}
                 onClose={handleCloseSnackbar}
                 message="Usuário logado com sucesso!"
             />
-        </>
+        </div>
     )
 }
 
