@@ -1,4 +1,5 @@
 import { MovieBanner, Recommendations, ThemeMenu } from "@/components";
+import { movieTypes } from "@/resources/variables"
 
 const Main = () => {
     const themes = ["Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação"]
@@ -9,7 +10,7 @@ const Main = () => {
                 <MovieBanner className="bg-red-600 w-full lg:w-[48%] h-40 lg:h-80 rounded-lg" />
                 <MovieBanner className="bg-red-600 lg:w-[48%] lg:h-80 rounded-lg hidden lg:block" />
             </div>
-            <ThemeMenu themes={themes} />
+            <ThemeMenu themes={movieTypes} />
             <Recommendations movies={movies}/>
         </div>
     );
