@@ -1,9 +1,7 @@
-import { MovieBanner, Recommendations, ThemeMenu } from "@/components";
-import { movieTypes } from "@/resources/variables"
+import { MovieBanner, RecommendationsMenu, ThemeMenu } from "@/components";
+import { movieTypes, movies } from "@/resources/variables"
 
 const Main = () => {
-    const themes = ["Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação", "Ação"]
-    const movies = [{ title: "FILMAO", rate: 10, year: 2025 },{ title: "FILMAO", rate: 10, year: 2025 },{ title: "FILMAO", rate: 10, year: 2025 },{ title: "FILMAO", rate: 10, year: 2025 },{ title: "FILMAO", rate: 10, year: 2025 },{ title: "FILMAO", rate: 10, year: 2025 },{ title: "FILMAO", rate: 10, year: 2025 }, { title: "FILMAO", rate: 10, year: 2025 }, { title: "FILMAO", rate: 10, year: 2025 }, { title: "FILMAO", rate: 10, year: 2025 }, { title: "FILMAO", rate: 10, year: 2025 }, { title: "FILMAO", rate: 10, year: 2025 }, { title: "FILMAO", rate: 10, year: 2025 }, { title: "FILMAO", rate: 10, year: 2025 }, { title: "FILMAO", rate: 10, year: 2025 }, { title: "FILMAO", rate: 10, year: 2025 },]
     return (
         <div className="flex flex-col gap-10 lg:px-8">
             <div className="flex flex-row justify-between">
@@ -11,7 +9,7 @@ const Main = () => {
                 <MovieBanner className="bg-red-600 lg:w-[48%] lg:h-80 rounded-lg hidden lg:block" />
             </div>
             <ThemeMenu themes={movieTypes} />
-            <Recommendations movies={movies}/>
+            <RecommendationsMenu movies={movies}/>
         </div>
     );
 };
