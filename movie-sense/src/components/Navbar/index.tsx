@@ -10,9 +10,9 @@ export const Navbar = () => {
         router.push("/main")
     }
     return (
-        <div className="flex flex-row justify-between">
+        <div className="flex flex-row justify-evenly md:justify-between">
             <button
-                className="text-2xl cursor-pointer"
+                className="text-2xl cursor-pointer hidden md:block"
                 onClick={onClickLogo}
             >
                 MovieSense

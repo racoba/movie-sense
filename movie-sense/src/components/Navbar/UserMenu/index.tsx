@@ -13,7 +13,7 @@ export const UserMenu = () => {
         setAnchorEl(null);
     };
     return (
-        <div>
+        <div className="flex flex-row">
             <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
                 <Typography sx={{ minWidth: 100 }}>UserName</Typography>
                 <Tooltip title="Account settings">

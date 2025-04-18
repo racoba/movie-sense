@@ -11,7 +11,7 @@ const Gallery = () => {
                             name={movie.title}
                             rate={movie.rate}
                             year={movie.year}
-                            src={movie.image}
+                            src={movie.src}
                         />
                     ))}
             </div>

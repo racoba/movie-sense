@@ -10,7 +10,8 @@ interface IProps {
     title: string;
     rate: number;
     year: number;
-    image: string;
+    src: string;
+    theme: string;
   }[];
 }
 
@@ -77,7 +78,7 @@ export const RecommendationsMenu = ({ movies }: IProps) => {
             name={movie.title}
             rate={movie.rate}
             year={movie.year}
-            src={movie.image}
+            src={movie.src}
           />
         ))}
       </div>
