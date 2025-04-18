@@ -8,7 +8,7 @@ interface IProps {
 
 export const MovieCard = ({ name, rate, year }: IProps) => {
     return (
-        <div className="h-66 w-44 flex flex-col gap-2">
+        <div className="h-66 w-40 min-w-40 flex flex-col gap-2">
             <div className="h-[70%] bg-red-600 rounded-lg">
 
             </div>
