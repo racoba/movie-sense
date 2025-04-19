@@ -31,12 +31,6 @@ export const MovieBanner = ({ className }: IProps) => {
         className="object-cover transition-transform duration-300 group-hover:scale-105"
         sizes="100%"
       />
-
-      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-        <button className="bg-gray-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-gray-500 transition cursor-pointer">
-          Watch
-        </button>
-      </div>
     </div>
   );
 

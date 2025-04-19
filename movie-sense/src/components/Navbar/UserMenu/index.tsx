@@ -17,6 +17,10 @@ export const UserMenu = () => {
     const handleLogout = () => {
         router.push("/login")
     }
+
+    const handleProfile = () => {
+        router.push("/profile")
+    }
     return (
         <div className="flex flex-row">
             <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
@@ -71,7 +75,7 @@ export const UserMenu = () => {
                 transformOrigin={{ horizontal: 'right', vertical: 'top' }}
                 anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
             >
-                <MenuItem onClick={handleClose}>
+                <MenuItem onClick={handleProfile}>
                     <Avatar /> Profile
                 </MenuItem>
                 <MenuItem onClick={handleClose}>
