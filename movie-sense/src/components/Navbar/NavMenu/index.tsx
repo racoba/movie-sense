@@ -74,6 +74,7 @@ export const NavMenu = () => {
                                     rate={movie.rate}
                                     src={movie.src}
                                     year={movie.year}
+                                    theme={movie.theme}
                                 />
                                 <p></p>
                             </div>

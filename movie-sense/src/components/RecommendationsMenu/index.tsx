@@ -79,6 +79,7 @@ export const RecommendationsMenu = ({ movies }: IProps) => {
             rate={movie.rate}
             year={movie.year}
             src={movie.src}
+            theme={movie.theme}
           />
         ))}
       </div>

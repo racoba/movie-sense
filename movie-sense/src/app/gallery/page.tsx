@@ -27,6 +27,7 @@ const Gallery = () => {
                             rate={movie.rate}
                             year={movie.year}
                             src={movie.src}
+                            theme={movie.theme}
                         />
                     )
                 })}
