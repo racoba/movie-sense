@@ -26,10 +26,10 @@ export const NavMenu = () => {
 
                 {!showSearch && (
                     <div className="flex flex-row items-center justify-between w-[70%]">
-                        <div onClick={() => onNavigateTo("gallery")} className="cursor-pointer transition-colors duration-300 px-2 py-2 rounded-xl hover:bg-gray-700">
+                        <div onClick={() => onNavigateTo("gallery/?content=movies")} className="cursor-pointer transition-colors duration-300 px-2 py-2 rounded-xl hover:bg-gray-700">
                             <span>Movies</span>
                         </div>
-                        <div onClick={() => onNavigateTo("gallery")} className="cursor-pointer transition-colors duration-300 px-2 py-2 rounded-xl hover:bg-gray-700">
+                        <div onClick={() => onNavigateTo("gallery/?content=series")} className="cursor-pointer transition-colors duration-300 px-2 py-2 rounded-xl hover:bg-gray-700">
                             <span>Series</span>
                         </div>
                     </div>
