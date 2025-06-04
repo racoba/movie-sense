@@ -18,7 +18,8 @@ const MovieService = {
     });
 
     if (!response.ok) throw new Error("Erro ao buscar recomendações");
-    return response.json();
+    const data = await response.json();
+    return data;
   },
 
   async getAllMovies(): Promise<Movie[]> {
@@ -32,7 +33,8 @@ const MovieService = {
   async getMoviesByGenre(genre: string): Promise<Movie[]> {
     const response = await fetch(`${BASE_URL}/get-all-movies-by-genre?genre=${encodeURIComponent(genre)}`);
     if (!response.ok) throw new Error(`Erro ao buscar filmes do gênero: ${genre}`);
-    return response.json();
+    const data = await response.json();
+    return data;
   },
 };
 

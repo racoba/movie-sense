@@ -28,6 +28,28 @@ export const MovieDetails = forwardRef<MovieDetailsRef>((_, ref) => {
 
     if (!movie) return null;
 
+    const addMovieToCache = (movieTitle: string) => {
+        const currentUser = localStorage.getItem("currentUser");
+        if (!currentUser) {
+            console.warn("Nenhum usuário logado.");
+            return;
+        }
+
+        const userData = localStorage.getItem("movieCache");
+        let cache = userData ? JSON.parse(userData) : {};
+
+        if (!cache[currentUser]) {
+            cache[currentUser] = [];
+        }
+
+        if (!cache[currentUser].includes(movieTitle)) {
+            cache[currentUser].push(movieTitle);
+        }
+
+        localStorage.setItem("movieCache", JSON.stringify(cache));
+    };
+
+
     return (
         <Modal
             open={open}
@@ -55,7 +77,7 @@ export const MovieDetails = forwardRef<MovieDetailsRef>((_, ref) => {
                     </Box>
 
                     <Box sx={{ mt: 3, display: 'flex', justifyContent: 'center' }}>
-                        <Button variant="contained" color="error" sx={{ width: 160 }}>
+                        <Button onClick={() => addMovieToCache(movie.title)} variant="contained" color="error" sx={{ width: 160 }}>
                             Watch
                         </Button>
                     </Box>

@@ -4,13 +4,13 @@ import { useEffect, useRef, useState } from "react";
 import { MovieCard } from "../MovieCard";
 import ChevronLeft from "@mui/icons-material/ChevronLeft";
 import ChevronRight from "@mui/icons-material/ChevronRight";
+import { extractName, extractYear } from "@/resources/utils";
 
 interface IProps {
   movies: {
     title: string;
     rate: number;
-    year: number;
-    src: string;
+    image: string;
     theme: string;
   }[];
 }
@@ -75,10 +75,10 @@ export const RecommendationsMenu = ({ movies }: IProps) => {
         {movies.map((movie, index) => (
           <MovieCard
             key={index}
-            name={movie.title}
+            name={extractName(movie.title)}
             rate={movie.rate}
-            year={movie.year}
-            src={movie.src}
+            year={extractYear(movie.title)}
+            src={movie.image}
             theme={movie.theme}
           />
         ))}

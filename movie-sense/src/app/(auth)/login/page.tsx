@@ -1,5 +1,5 @@
 "use client"
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Box, Button, FormControl, Grid, Snackbar, TextField } from "@mui/material";
 import { useRouter } from "next/navigation";
 
@@ -16,12 +16,37 @@ const Login = () => {
     const router = useRouter();
 
     const onClickLogin = async (data?: SignInData) => {
-        router.push("/main")
-    }
+        const currentUser = email.trim();
+        if (!currentUser) return;
 
-    const onClickRegister = async () => {
-        router.push("/register")
-    }
+        // Recupera o cache atual
+        const userData = localStorage.getItem("movieCache");
+        let cache = userData ? JSON.parse(userData) : {};
+
+        // Verifica quantos usuários existem
+        const usersCount = Object.keys(cache).length;
+
+        // Se houverem 3 ou mais usuários, limpa tudo
+        if (usersCount >= 3 && !cache[currentUser]) {
+            localStorage.clear();
+            cache = {}; // resetar o cache também
+            console.log("Limpeza geral do cache devido a limite de usuários.");
+        }
+
+        // Cria array vazio de filmes se o usuário ainda não existir
+        if (!cache[currentUser]) {
+            cache[currentUser] = [];
+            console.log(`Cache criado para ${currentUser}`);
+        }
+
+        // Atualiza o localStorage
+        localStorage.setItem("movieCache", JSON.stringify(cache));
+        localStorage.setItem("currentUser", currentUser);
+
+        setOpen(true);
+        router.push("/main");
+    };
+
 
     const handleCloseSnackbar = (event: React.SyntheticEvent | Event, reason?: string) => {
         if (reason === 'clickaway') {
@@ -73,13 +98,6 @@ const Login = () => {
                                 justifyContent="space-around"
                                 width={230}
                             >
-                                <Button
-                                    onClick={() => onClickRegister()}
-                                    variant="outlined"
-                                    style={{ color: "black", borderColor: "black", marginTop: 30 }}
-                                >
-                                    Register
-                                </Button>
                                 <Button
                                     onClick={() => onClickLogin()}
                                     variant="contained"
