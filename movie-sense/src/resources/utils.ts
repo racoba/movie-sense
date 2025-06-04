@@ -1,6 +1,6 @@
-export function extractYear(title: string): number | null {
+export function extractYear(title: string): number {
   const match = title.match(/\((\d{4})\)/);
-  return match ? parseInt(match[1], 10) : null;
+  return match ? parseInt(match[1], 10) : 1000;
 }
 
 export function extractName(title: string): string {

@@ -24,7 +24,9 @@ const MovieService = {
   async getAllMovies(): Promise<Movie[]> {
     const response = await fetch(`${BASE_URL}/get-all-movies`);
     if (!response.ok) throw new Error("Erro ao buscar todos os filmes");
-    return response.json();
+
+    const data = await response.json();
+    return data;
   },
 
   async getMoviesByGenre(genre: string): Promise<Movie[]> {
