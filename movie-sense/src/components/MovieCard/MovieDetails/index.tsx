@@ -47,6 +47,8 @@ export const MovieDetails = forwardRef<MovieDetailsRef>((_, ref) => {
         }
 
         localStorage.setItem("movieCache", JSON.stringify(cache));
+
+        window.location.reload();
     };
 
 
@@ -73,11 +75,11 @@ export const MovieDetails = forwardRef<MovieDetailsRef>((_, ref) => {
                             <Typography>• {movie.year}</Typography>
                         </Box>
 
-                        <Chip label={movie.theme} color="primary" variant="outlined" sx={{ width: "fit-content" }} />
+                        <Chip label={movie.theme} color="info" variant="filled" sx={{ width: "fit-content" }} />
                     </Box>
 
                     <Box sx={{ mt: 3, display: 'flex', justifyContent: 'center' }}>
-                        <Button onClick={() => addMovieToCache(movie.title)} variant="contained" color="error" sx={{ width: 160 }}>
+                        <Button onClick={() => addMovieToCache(`${movie.title} (${movie.year})`)} variant="contained" color="error" sx={{ width: 160 }}>
                             Watch
                         </Button>
                     </Box>

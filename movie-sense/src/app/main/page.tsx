@@ -12,7 +12,6 @@ const Main = () => {
             const currentUser = localStorage.getItem("currentUser");
             const movieCache = JSON.parse(localStorage.getItem("movieCache") || "{}");
             const watchedMovies = currentUser && movieCache[currentUser] ? movieCache[currentUser] : [];
-
             const recommended = await MovieService.getRecommendations(watchedMovies);
             setMovies(recommended);
         };

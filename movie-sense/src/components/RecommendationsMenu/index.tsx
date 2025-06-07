@@ -55,7 +55,7 @@ export const RecommendationsMenu = ({ movies }: IProps) => {
 
   return (
     <div className="flex flex-col gap-2 relative group">
-      <span className="text-2xl">Para Você</span>
+      <span className="text-2xl">For You</span>
 
       {canScrollLeft && (
         <button

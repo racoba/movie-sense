@@ -18,8 +18,8 @@ export const UserMenu = () => {
         router.push("/login")
     }
 
-    const handleProfile = () => {
-        router.push("/profile")
+    const handleHistory = () => {
+        router.push("/history")
     }
     return (
         <div className="flex flex-row">
@@ -75,10 +75,10 @@ export const UserMenu = () => {
                 transformOrigin={{ horizontal: 'right', vertical: 'top' }}
                 anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
             >
-                <MenuItem onClick={handleProfile}>
+                <MenuItem onClick={handleClose}>
                     <Avatar /> Profile
                 </MenuItem>
-                <MenuItem onClick={handleClose}>
+                <MenuItem onClick={handleHistory}>
                     <History /><span className="ml-3"> Watched Movies</span>
                 </MenuItem>
                 <Divider />
