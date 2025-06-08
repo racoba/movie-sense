@@ -83,15 +83,6 @@ const Login = () => {
                                 style={{ width: "100%" }}
                             />
 
-                            <TextField
-                                required
-                                type="password"
-                                label="Password"
-                                variant="standard"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                style={{ width: "100%", marginTop: 15 }}
-                            />
                             <Box
                                 display="flex"
                                 flexDirection="row"
